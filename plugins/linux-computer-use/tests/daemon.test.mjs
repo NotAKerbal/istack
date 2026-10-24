@@ -216,7 +216,7 @@ test('Connection and per-client queue limits; malformed requests are rejected', 
     }
     assert.deepEqual(replies.map(reply => reply.id), [null, 1, 2, 3], JSON.stringify(replies));
     assert.ok(replies.every(reply => reply.error && !('result' in reply)), JSON.stringify(replies));
-    assert.match(replies[0].error, /Invalid desktop service request/);
+    assert.match(replies[0].error, /not valid JSON/);
     assert.match(replies[1].error, /Invalid desktop service request/);
     assert.match(replies[2].error, /Invalid desktop service parameters/);
   } finally { await service.close(); }
