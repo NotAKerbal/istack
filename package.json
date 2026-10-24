@@ -1,0 +1,21 @@
+{
+  "name": "istack",
+  "private": true,
+  "description": "Isaac's collection of local agent plugins",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "postinstall": "node scripts/bootstrap.mjs",
+    "bootstrap": "node scripts/bootstrap.mjs",
+    "test": "npm --prefix plugins/linux-computer-use test",
+    "doctor": "npm --prefix plugins/linux-computer-use run doctor",
+    "setup:service": "npm --prefix plugins/linux-computer-use run setup:service",
+    "setup:codex": "npm --prefix plugins/linux-computer-use run setup:codex",
+    "verify:codex": "npm --prefix plugins/linux-computer-use run verify:codex",
+    "verify:service": "npm --prefix plugins/linux-computer-use run verify:service",
+    "test:desktop": "npm --prefix plugins/linux-computer-use run test:desktop",
+    "stop": "npm --prefix plugins/linux-computer-use run stop",
+    "resume": "npm --prefix plugins/linux-computer-use run resume"
+  }
+}

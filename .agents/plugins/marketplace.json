@@ -1,0 +1,12 @@
+{
+  "name": "linux-desktop-local",
+  "interface": { "displayName": "istack" },
+  "plugins": [
+    {
+      "name": "linux-computer-use",
+      "source": { "source": "local", "path": "./plugins/linux-computer-use" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}

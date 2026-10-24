@@ -1,0 +1,20 @@
+# Dependencies and build output
+node_modules/
+__pycache__/
+*.pyc
+*.tgz
+*.tar
+*.tar.gz
+*.zip
+
+# Local verification output (may contain real desktop screenshots)
+artifacts/
+
+# Local configuration and secrets
+.env
+.env.*
+*.local.json
+*.pem
+*.key
+.npmrc
+.DS_Store

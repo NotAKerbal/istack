@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "linux-computer-use",
+  "version": "0.2.0",
+  "description": "Control Linux applications through a persistent native GNOME service or consented portal session.",
+  "license": "MIT",
+  "keywords": ["linux", "wayland", "computer-use", "accessibility", "mcp"],
+  "extensions": {
+    "com.openai": {
+      "requires_local_executor": true,
+      "mcpServers": "./.mcp.json",
+      "interface": {
+        "displayName": "Linux Computer Use",
+        "shortDescription": "Native Linux desktop control",
+        "longDescription": "Operate this GNOME desktop through a persistent per-user service with screenshots, mouse, keyboard, and accessibility. Includes a portal backend for compatible Wayland desktops.",
+        "developerName": "Local tools",
+        "category": "Productivity",
+        "capabilities": ["Read", "Write"],
+        "defaultPrompt": ["Use Linux Computer Use to help me operate a desktop application."]
+      }
+    }
+  }
+}
