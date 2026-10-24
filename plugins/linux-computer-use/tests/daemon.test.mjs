@@ -40,17 +40,24 @@ async function setup(options = {}) {
     async close() { for (const c of clients) c.close(); await daemon.close(); await rm(dir, { recursive: true }); } };
 }
 
-// Exercise the raw protocol, bypassing client-side validation.
-async function rawExchange(path, lines) {
+// Exercise the raw protocol, bypassing client-side validation. Resolves once `expected` reply lines
+// arrive, or early if the service closes the connection; rejects on socket error or timeout.
+async function rawExchange(path, lines, { expected = lines.length, timeoutMs = 2000 } = {}) {
   const socket = net.createConnection(path);
-  await new Promise(resolve => socket.once('connect', resolve));
   let data = '';
-  socket.setEncoding('utf8');
-  socket.on('data', chunk => { data += chunk; });
-  for (const line of lines) socket.write(line + '\n');
-  await sleep(50);
-  socket.destroy();
-  return data.trim().split('\n').filter(Boolean).map(line => JSON.parse(line));
+  const replies = () => data.split('\n').slice(0, -1).filter(Boolean).map(line => JSON.parse(line));
+  try {
+    await new Promise((resolve, reject) => {
+      const timer = setTimeout(() => reject(new Error(`Timed out after ${timeoutMs}ms awaiting ${expected} replies; got: ${JSON.stringify(data)}`)), timeoutMs);
+      const done = error => { clearTimeout(timer); error ? reject(error) : resolve(); };
+      socket.setEncoding('utf8');
+      socket.on('data', chunk => { data += chunk; if (data.split('\n').length - 1 >= expected) done(); });
+      socket.on('error', done);
+      socket.on('close', () => done());
+      socket.once('connect', () => { for (const line of lines) socket.write(line + '\n'); });
+    });
+  } finally { socket.destroy(); }
+  return replies();
 }
 
 test('Private socket, persistent session handoff, Unicode transport, and exclusive control', async () => {
@@ -198,11 +205,20 @@ test('Connection and per-client queue limits; malformed requests are rejected', 
     assert.match(results[2].reason.message, /Too many desktop requests/);
 
     service.first.close();
-    await sleep(20);
-    const replies = await rawExchange(service.path, ['not json', '{"id":1,"method":"exec"}',
-      '{"id":2,"method":"screenshot","params":[1]}', '{"id":3,"method":"batch","params":{"actions":[]}}']);
-    assert.equal(replies.length, 4);
-    assert.ok(replies.every(reply => reply.error && !reply.result));
+    const malformed = ['not json', '{"id":1,"method":"exec"}',
+      '{"id":2,"method":"screenshot","params":[1]}', '{"id":3,"method":"batch","params":{"actions":[]}}'];
+    let replies;
+    // The freed slot is only visible once the service has processed the disconnect, so retry a rejection briefly.
+    for (let attempt = 0; attempt < 50; ++attempt) {
+      replies = await rawExchange(service.path, malformed);
+      if (!/Too many local desktop clients/.test(replies[0]?.error)) break;
+      await sleep(20);
+    }
+    assert.deepEqual(replies.map(reply => reply.id), [null, 1, 2, 3], JSON.stringify(replies));
+    assert.ok(replies.every(reply => reply.error && !('result' in reply)), JSON.stringify(replies));
+    assert.match(replies[0].error, /Invalid desktop service request/);
+    assert.match(replies[1].error, /Invalid desktop service request/);
+    assert.match(replies[2].error, /Invalid desktop service parameters/);
   } finally { await service.close(); }
 });
 
