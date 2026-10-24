@@ -6,6 +6,8 @@ istack/
 ├── package.json                       # Private root: bootstrap and forwarding scripts only, no dependencies
 ├── scripts/bootstrap.mjs              # Runs `npm ci` in every plugins/* folder that has a package-lock.json
 ├── docs/                              # Repository-level documentation
+├── skills/
+│   └── vercel-pr-previews/            # Standalone agent skill (SKILL.md, agents/, references/, scripts/)
 └── plugins/
     └── linux-computer-use/            # One self-contained plugin
         ├── .codex-plugin/plugin.json  # Codex manifest
@@ -22,3 +24,4 @@ istack/
 - **One marketplace.** The root `.agents/plugins/marketplace.json` is the only marketplace file. Plugin folders don't contain their own. Each entry's `source.path` is relative to the repository root.
 - **Local output stays untracked.** `artifacts/`, `node_modules/`, archives, `.env*`, and local config files are ignored. Because Codex copies untracked files too, remove local output such as `artifacts/` from a plugin folder before reinstalling it.
 - **No GUI in hosted CI.** Tests that need a real desktop session, systemd user services, or a signed-in Codex stay behind explicit scripts (for example `test:desktop`) and are not run automatically.
+- **Standalone skills.** Folders under `skills/` are self-contained skills, not plugins. They are installed by copying or symlinking them into the agent's skills directory, and the marketplace does not list them.

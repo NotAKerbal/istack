@@ -10,6 +10,24 @@ istack is Isaac's collection of local agent plugins. Each plugin lives in its ow
 
 For compatibility with existing installs, the marketplace keeps the ID `linux-desktop-local`; its display name is **istack**. The plugin is installed as `linux-computer-use@linux-desktop-local`.
 
+## Skills
+
+Standalone agent skills live under `skills/`. They are not plugins and are not listed in the marketplace.
+
+| Skill | Summary |
+| --- | --- |
+| [`vercel-pr-previews`](skills/vercel-pr-previews/SKILL.md) | When an agent creates or pushes to a PR in a Vercel project, it first checks that a Convex preview backend will be deployed only if the PR changes Convex. After the push, it finds the exact-commit preview, opens it visibly, and keeps a Previews section in the PR description. |
+
+A skill applies only while it is installed and the agent loads it. To install one for Codex, symlink it into your skills folder; this does not replace an existing skill directory:
+
+```bash
+skills_dir="${CODEX_HOME:-$HOME/.codex}/skills"
+mkdir -p "$skills_dir"
+[ -e "$skills_dir/vercel-pr-previews" ] || ln -s "$PWD/skills/vercel-pr-previews" "$skills_dir/vercel-pr-previews"
+```
+
+Run this from the repository root. Use `cp -R` instead of `ln -s` for a copy that does not follow this checkout. For Claude Code, use `~/.claude/skills` as the destination. Then restart the Codex, T3, or Claude Code agent process so it discovers the skill.
+
 ## Quick setup
 
 Requires Node 20+, plus the desktop prerequisites listed in the [plugin README](plugins/linux-computer-use/README.md#run).

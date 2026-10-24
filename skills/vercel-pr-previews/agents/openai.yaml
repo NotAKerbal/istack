@@ -1,0 +1,6 @@
+interface:
+  display_name: "Vercel PR Previews"
+  short_description: "Open exact-commit Vercel previews for PRs"
+  default_prompt: "Use $vercel-pr-previews to open the Vercel preview for this pull request's latest commit."
+policy:
+  allow_implicit_invocation: true
