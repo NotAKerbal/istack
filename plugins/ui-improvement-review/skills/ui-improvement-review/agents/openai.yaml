@@ -1,0 +1,6 @@
+interface:
+  display_name: "UI Improvement Review"
+  short_description: "Score and improve a UI with a multi-model council"
+  default_prompt: "Use $ui-improvement-review to score this app's main flow and recommend the highest-impact improvements."
+policy:
+  allow_implicit_invocation: true
