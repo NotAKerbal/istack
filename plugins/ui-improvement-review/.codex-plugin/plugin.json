@@ -1,0 +1,13 @@
+{
+  "name": "ui-improvement-review",
+  "version": "0.1.0",
+  "description": "Score a product UI with an independent multi-model council against an anchored rubric.",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "UI Improvement Review",
+    "shortDescription": "Multi-model UI review",
+    "developerName": "Local tools",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ui-improvement-review",
+  "version": "0.1.0",
+  "description": "Score a product UI with an independent multi-model council against an anchored rubric.",
+  "license": "MIT",
+  "keywords": ["ui", "design-review", "benchmarking", "accessibility"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "UI Improvement Review",
+        "shortDescription": "Multi-model UI review",
+        "longDescription": "Score an existing product UI with an independent council of distinct AI models against an anchored rubric, benchmark it against strong peers, and produce evidence-backed improvements. Review only by default.",
+        "developerName": "Local tools",
+        "category": "Productivity",
+        "capabilities": ["Read", "Write"],
+        "defaultPrompt": ["Use $ui-improvement-review to score this app's main flow and recommend the highest-impact improvements."]
+      }
+    }
+  }
+}
