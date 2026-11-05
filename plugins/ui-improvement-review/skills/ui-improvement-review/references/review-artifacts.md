@@ -15,14 +15,18 @@ Evidence bundle: <paths or links, with IDs>
 Benchmark bundle: <paths or links, with IDs, or "none: gap disclosed">
 Known evidence gaps: <...>
 Rubric: <path to rubric.md>
+Confirmed user preferences: <scoped snapshot, or "none">
 
 Open the evidence yourself. Score every applicable rubric category, not just your
 lens, using only evidence you opened. Use N/A or unknown where the rubric says to;
 a missing score is more useful than a guessed one. There is no desired result.
+The preferences are context about this user, not a quality standard. They do not
+change any score and do not override the constraints above or accessibility. Report
+on them only under Preference alignment.
 Return the reviewer format below.
 ```
 
-Do not include the target, earlier scores, other reviewers' output, or a list of changes.
+Do not include the target, earlier scores, other reviewers' output, or a list of changes. For preferences, include only the snapshot from [preference-library.md](preference-library.md), never the library's path, sources, or tentative or superseded entries.
 
 ## Reviewer return
 
@@ -37,6 +41,7 @@ Category | Score, N/A, or unknown | Confidence | Evidence | Gap
 Blockers: <none, or each with evidence>
 Findings: <in the finding format>
 Peer observations: <evidence ID, technique or taste, relevance>
+Preference alignment: <per snapshot ID: aligned, conflict, or not observed; evidence IDs; note. Or "no snapshot">
 ```
 
 ## Finding
@@ -84,3 +89,4 @@ Round 0 is the frozen baseline. Add one row per round. Do not rewrite earlier ro
 6. **Round ledger and stop reason** (improve mode).
 7. **Status by stage,** each as Passed, Failed, Blocked, or Not run: implementation, independent review, automated checks, and runtime verification.
 8. **Gaps.** Unavailable models or tools, uncaptured states, and estimates used instead of measurements.
+9. **Preference alignment,** separate from the verdict and scores: snapshot IDs used, or "none" or "library not consulted"; each entry's alignment by reviewer, with evidence; conflicts with the brief, constraints, or accessibility; library changes made this run; and any hypotheses awaiting the user's confirmation. Sanitize this section if the report will go beyond the user.

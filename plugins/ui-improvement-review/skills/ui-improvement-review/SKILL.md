@@ -1,17 +1,27 @@
 ---
 name: ui-improvement-review
-description: Score an existing product UI with an independent council of distinct AI models against an anchored rubric, benchmark comparable flows against strong peers, and produce evidence-backed improvements, iterating toward a quality target (default 9/10 from every reviewer) only when changes are authorized. Use when asked for a UI or design review, scored critique, multi-model or council design feedback, competitive UI benchmarking, or an improve-until-it-scores-well loop on a real app or screenshots. Not for routine frontend implementation, single-issue UI fixes, or creating designs from scratch.
+description: Score an existing product UI with an independent council of distinct AI models against an anchored rubric, benchmark comparable flows against strong peers, and produce evidence-backed improvements, iterating toward a quality target (default 9/10 from every reviewer) only when changes are authorized. Use when asked for a UI or design review, scored critique, multi-model or council design feedback, competitive UI benchmarking, or an improve-until-it-scores-well loop on a real app or screenshots. Also use to remember, list, correct, or forget the user's UI preferences for these reviews, without starting a review. Not for routine frontend implementation, single-issue UI fixes, or creating designs from scratch.
 ---
 
 # UI improvement review
 
 Measure how good a UI is from observed evidence, then identify or make the changes that matter most to its users. A score records what reviewers saw at one revision. It is not something to negotiate upward.
 
+## Preference memory
+
+A private, user-wide library records the UI preferences the user has explicitly stated. Read [references/preference-library.md](references/preference-library.md) before reading or writing it; that file has its path, format, and rules.
+
+- **Memory-only requests.** If the user only asks to remember, change, list, or forget a UI preference, do that in the library and stop. Do not capture evidence, benchmark, convene a council, or audit the app. If they also ask for a review, save first, then run it.
+- **Before a review.** Once scope is known, build one snapshot of the relevant confirmed entries and include it unchanged in every reviewer's brief.
+- **During and after a review.** Record explicit preference feedback from the user when it is given. Silence and reviewer suggestions teach nothing, and hypotheses wait for the user to confirm them.
+- **Limits.** Report preference alignment separately. It never changes a rubric score or the gate, and it never overrides the current brief, brand rules, or accessibility.
+- **Who writes.** Only the lead writes the library. This is allowed in review-only mode and does not authorize any change to the app.
+
 ## Set up the run
 
 Infer what you can and ask only about what would change the result:
 
-- **Mode.** *Review only* is the default: suggestions only, with no changes to code, design, or config. *Improve* applies only when the user authorizes changes in this task, within the stated repository, branch, and scope. That authorization does not extend to merging, deploying, or unrelated work.
+- **Mode.** *Review only* is the default: suggestions only, with no changes to the product's code, design, or config. *Improve* applies only when the user authorizes changes in this task, within the stated repository, branch, and scope. That authorization does not extend to merging, deploying, or unrelated work.
 - **Scope.** Flows, screens, platforms, audience, primary tasks, and the exact revision or build.
 - **Constraints.** Design identity, brand rules, product decisions, and anything the user wants left alone. These bound every recommendation.
 - **Target.** 9/10 unless the user sets another. A target of 10 may be attempted but is never promised.
@@ -66,13 +76,13 @@ The gate is **Met** only when every council reviewer scores every applicable cat
 
 Prioritize by user impact and reach, not by how many reviewers mentioned something or how easy it is to fix. Each finding needs its user impact, evidence IDs, proposed change, a way to verify the change, and its tradeoffs. Formats are in [references/review-artifacts.md](references/review-artifacts.md).
 
-Focus on what changes a user's outcome: comprehension, speed, errors, access, and trust. Treat ornamental polish as lowest priority and do not add decoration to raise a score. When a recommendation conflicts with a user constraint or with another reviewer's recommendation, present it as a tradeoff for the user to decide.
+Focus on what changes a user's outcome: comprehension, speed, errors, access, and trust. Treat ornamental polish as lowest priority and do not add decoration to raise a score. When a recommendation conflicts with a user constraint, a confirmed preference, or another reviewer's recommendation, present it as a tradeoff for the user to decide.
 
 **In review-only mode, stop here.** Report the current score and gate state at the reviewed revision along with the recommendations. Proposed fixes count for nothing: do not state or imply that the target has been or would be reached once they are applied.
 
 ## Improve (only when authorized)
 
-Freeze a baseline as round 0 of the ledger: revision, evidence bundle, brief, rubric, council, and target. If any of these changes later, record that and note where scores stop being comparable. Change the target, scope, or rubric only with the user's agreement.
+Freeze a baseline as round 0 of the ledger: revision, evidence bundle, brief and its preference snapshot, rubric, council, and target. If any of these changes later, record that and note where scores stop being comparable. Change the target, scope, or rubric only with the user's agreement.
 
 Each cycle:
 
