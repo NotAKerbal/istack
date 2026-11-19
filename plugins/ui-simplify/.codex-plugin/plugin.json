@@ -1,0 +1,13 @@
+{
+  "name": "ui-simplify",
+  "version": "0.1.0",
+  "description": "Build and clean up UI without the extra text, duplicate information, and decorative chrome agents tend to add.",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "UI Simplify",
+    "shortDescription": "Lean UI without agent fluff",
+    "developerName": "Local tools",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"]
+  }
+}
