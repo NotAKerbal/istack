@@ -5,9 +5,7 @@ description: >-
   decorative chrome. Use when building, changing, redesigning, or mocking up
   app or web UI, including screens, components, settings, dashboards, and
   artifact pages, and when asked to simplify, declutter, or condense a UI or to
-  "remove the extra text". Not for code-only cleanup (simplify), scored
-  multi-model design reviews, or remembering UI preferences
-  (ui-improvement-review handles both).
+  "remove the extra text". Not for code-only cleanup (simplify).
 ---
 
 # UI simplify
