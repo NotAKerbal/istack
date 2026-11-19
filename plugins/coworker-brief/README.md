@@ -7,8 +7,9 @@ This plugin is part of the [istack](../../README.md) collection at `plugins/cowo
 ## Behavior
 
 - **Grounded.** The agent checks cheap, read-only state such as git, the PR, and background or delegated work before writing, and it keeps verified results apart from planned or unverified ones.
-- **Short and bottom line first.** It is usually 100 to 250 words. The opening sentence says what the work is and why, and any decision you need to make comes next.
-- **Report only.** The brief is the whole response. The agent does not continue the task in the same turn unless you ask it to.
+- **Bottom line first.** The opening sentence says what the work is and why, and any decision you need to make comes next.
+- **Report only, not a pause.** The agent takes no new action while writing the brief. It keeps any standing instructions, such as a review loop or a requested merge, and stops the task only if you ask it to.
+- **Short updates stay short.** It usually runs 100 to 250 words, and shorter when there is less to say.
 
 Invoke it with `$coworker-brief` in Codex, or ask something like "catch me up" or "what are you working on?"
 
