@@ -1,0 +1,13 @@
+{
+  "name": "coworker-brief",
+  "version": "0.1.0",
+  "description": "Catch up on a thread with a short coworker-style brief on what the agent is doing and why it matters.",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Coworker Brief",
+    "shortDescription": "Coworker-style thread catch-up",
+    "developerName": "Local tools",
+    "category": "Productivity",
+    "capabilities": ["Read"]
+  }
+}

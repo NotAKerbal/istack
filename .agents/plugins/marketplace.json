@@ -13,6 +13,12 @@
       "source": { "source": "local", "path": "./plugins/ui-improvement-review" },
       "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
       "category": "Productivity"
+    },
+    {
+      "name": "coworker-brief",
+      "source": { "source": "local", "path": "./plugins/coworker-brief" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
     }
   ]
 }

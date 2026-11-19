@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "coworker-brief",
+  "version": "0.1.0",
+  "description": "Catch up on a thread with a short coworker-style brief on what the agent is doing and why it matters.",
+  "license": "MIT",
+  "keywords": ["status", "handoff", "context-switching", "summary"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Coworker Brief",
+        "shortDescription": "Coworker-style thread catch-up",
+        "longDescription": "Have an agent pause and explain its current thread the way it would to a coworker: what it is working on, why it matters, where it stands, and what it needs from you. Grounded in the thread's actual state and report only, so you can switch between many threads without rereading them.",
+        "developerName": "Local tools",
+        "category": "Productivity",
+        "capabilities": ["Read"],
+        "defaultPrompt": ["Use $coworker-brief to catch me up on what you're working on and why it matters."]
+      }
+    }
+  }
+}
