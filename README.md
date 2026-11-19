@@ -10,7 +10,7 @@ istack is Isaac's collection of local agent plugins. Each active plugin lives in
 | `coworker-brief` 0.1.0 | [`plugins/coworker-brief`](plugins/coworker-brief/README.md) | Skill-only catch-up brief: the agent explains its current thread like it would to a coworker, to cut context-switching cost |
 | `ui-simplify` 0.1.0 | [`plugins/ui-simplify`](plugins/ui-simplify/README.md) | Skill-only lean-UI rules: no extra text, duplicate information, or decorative chrome, applied while building and when simplifying |
 
-Retired plugins move to `archive/` and leave the marketplace. `ui-improvement-review` is archived there; use `ui-simplify` instead.
+Retired plugins are kept in [`archive/`](archive/).
 
 For compatibility with existing installs, the marketplace keeps the ID `linux-desktop-local`; its display name is **istack**. Plugins are installed as `<plugin-name>@linux-desktop-local`.
 

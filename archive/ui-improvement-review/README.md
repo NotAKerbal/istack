@@ -1,6 +1,6 @@
 # UI Improvement Review
 
-> **Archived.** This plugin is no longer maintained or listed in the istack marketplace. Use `ui-simplify` instead.
+> **Archived.** This plugin is no longer maintained or listed in the istack marketplace.
 
 A skill-only Codex plugin that scores an existing product UI with an independent council of distinct AI models against an anchored rubric, benchmarks comparable flows against strong peers, and reports evidence-backed improvements. It is review only unless changes are authorized for the task.
 
