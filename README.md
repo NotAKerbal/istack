@@ -9,6 +9,7 @@ istack is Isaac's collection of local agent plugins. Each plugin lives in its ow
 | `linux-computer-use` 0.2.0 | [`plugins/linux-computer-use`](plugins/linux-computer-use/README.md) | Native GNOME desktop control over MCP (screenshots, input, AT-SPI accessibility), using a per-user service with an XDG portal fallback |
 | `ui-improvement-review` 0.1.0 | [`plugins/ui-improvement-review`](plugins/ui-improvement-review/README.md) | Skill-only scored UI review by an independent multi-model council, with peer benchmarking and an optional improvement loop |
 | `coworker-brief` 0.1.0 | [`plugins/coworker-brief`](plugins/coworker-brief/README.md) | Skill-only catch-up brief: the agent explains its current thread like it would to a coworker, to cut context-switching cost |
+| `ui-simplify` 0.1.0 | [`plugins/ui-simplify`](plugins/ui-simplify/README.md) | Skill-only lean-UI rules: no extra text, duplicate information, or decorative chrome, applied while building and when simplifying |
 
 For compatibility with existing installs, the marketplace keeps the ID `linux-desktop-local`; its display name is **istack**. Plugins are installed as `<plugin-name>@linux-desktop-local`.
 
