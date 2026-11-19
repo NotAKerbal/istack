@@ -1,0 +1,6 @@
+interface:
+  display_name: "Coworker Brief"
+  short_description: "Explain this thread's work like you would to a coworker"
+  default_prompt: "Use $coworker-brief to catch me up on what you're working on and why it matters."
+policy:
+  allow_implicit_invocation: true
