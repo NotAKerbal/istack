@@ -1,6 +1,6 @@
 {
   "name": "ui-simplify",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Build and clean up UI without the extra text, duplicate information, and decorative chrome agents tend to add.",
   "skills": "./skills/",
   "interface": {

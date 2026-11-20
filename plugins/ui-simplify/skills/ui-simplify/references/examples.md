@@ -49,6 +49,10 @@ These are generalized from cleanups Isaac has asked agents for. Each row shows w
 | Search and view controls in their own rows | Move them to the right side of the main header |
 | A "mark as done" bar, a floating button, and two related panels | Remove the bar and button, and merge the panels behind an existing button |
 | A list of every sign-in method | One "Add sign-in method" menu |
+| Settings pages cleaned up into one plain list of options | Divide each page into parts again, since a plain list "is a little bit too much as well" |
+| A change-password form open on the settings page | A button that opens it |
+| A recovery key shown on the settings page | A button to view it |
+| Every app you can connect, listed up front | A collapsed list to browse |
 | Theme and account settings in the sidebar | A minimal settings screen |
 | A long block of reference text | Condense it or make it expandable |
 | A width setting shown on phones | Hide it where it doesn't matter |
@@ -58,4 +62,5 @@ These are generalized from cleanups Isaac has asked agents for. Each row shows w
 
 - **Simplifying a reading view:** Isaac asked to simplify "without removing functionality". Annotation stayed available in the simplified mode.
 - **Removing a "saved in this browser only" notice:** Isaac paired it with adding shared saving for everyone, which fixed the limitation the notice described.
+- **Grouping in settings:** a cleanup that hid each section's repeated title and removed its descriptions and dividers was right, but it left every page as one flat list. Isaac asked for the groups back.
 - **Obsolete features:** a legacy notes UI and an old planning interface came out only when Isaac asked, and existing user data was kept.
