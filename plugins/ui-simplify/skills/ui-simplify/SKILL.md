@@ -12,7 +12,7 @@ description: >-
 
 Isaac's most frequent UI feedback is that agents add too much: titles that repeat the header, explainer and disclaimer copy, duplicate information, dividers, nested cards, and decorative chips. Isaac then removes them one request at a time. Build lean from the start, so a first version already looks like the result of a cleanup.
 
-Keep an element only if a user would miss it.
+Keep an element only if a user would miss it. Lean also means organized and closed until needed: settings are still grouped into parts, secondary settings forms and option lists wait behind a button, and secrets always do.
 
 ## Defaults
 
@@ -40,7 +40,10 @@ Keep an element only if a user would miss it.
 - Keep primary content and the main action above the fold, on phones too.
 - Put search and page controls in the existing header instead of new bars, rows, or floating buttons.
 - Merge related panels, and reuse an existing button rather than adding a parallel one.
-- Use progressive disclosure. Collapse secondary or long reference content, offer "Add method" instead of listing every option, and hide controls that don't matter on a platform.
+- Group related controls. Divide each settings page into a few parts under short group labels of one or two words. Removing descriptions and dividers shouldn't remove the grouping, since a long, plain list of options is clutter too.
+- Keep secondary settings closed until asked for. Show a button, not the open form or full contents: Change password instead of the password form, View recovery key instead of the key, and a collapsed list to browse instead of every app or network you can connect. Offer "Add method" instead of listing every option, and collapse long reference content. Never show keys, tokens, or recovery codes by default.
+- When an existing action already leads to that content, such as a "Connect a network" item elsewhere in the app, have it go to the section and expand it in one step. Don't leave the section always open to save that click.
+- Hide controls that don't matter on a platform.
 - Settings, theme, and accounts live in a settings screen, not the sidebar.
 - List items show only the fields people scan for.
 
@@ -53,7 +56,7 @@ Keep an element only if a user would miss it.
 - Required legal or brand notices, as small as the requirement allows.
 - Functionality. Isaac's words: "simplify the UI without removing functionality." Hide, collapse, or move a feature rather than drop it.
 
-Lean doesn't mean cramped. Don't shrink tap targets or squeeze spacing to show less.
+Lean doesn't mean cramped or flat. Don't shrink tap targets, squeeze spacing, or drop group labels to show less.
 
 ## When asked to simplify
 
@@ -63,7 +66,7 @@ Lean doesn't mean cramped. Don't shrink tap targets or squeeze spacing to show l
 4. **Ask before deleting features or data.** Removing the markup, styles, and strings behind in-scope clutter is part of the job. Removing a feature, its underlying implementation, or data needs Isaac's explicit go-ahead, even when it looks obsolete, unreachable, legacy, or fake. Name the candidates in one line rather than deleting them or expanding the task.
 5. **Do the simplification first,** before setup, unrelated polish, or a redesign nobody asked for.
 6. **Update tests** that asserted removed copy so they check behavior instead.
-7. **Check the running UI** as the shared workflow requires, looking for what is left rather than confirming what you removed.
+7. **Check the running UI** as the shared workflow requires, looking for what is left rather than confirming what you removed. Also look for what the cleanup broke: a page that became one ungrouped list, a secondary settings form or option list that is open by default, or a secret shown without being asked for. Check that an existing action leading to a collapsed section opens it, by keyboard too, with focus inside it.
 
 When you build mockups or options, each one follows these defaults. Vary layout and style, not the amount of clutter.
 

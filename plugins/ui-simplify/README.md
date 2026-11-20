@@ -7,6 +7,7 @@ This plugin is part of the [istack](../../README.md) collection at `plugins/ui-s
 ## Behavior
 
 - **Lean by default.** It covers building and changing UI, including mockups and artifact pages, not only cleanup requests.
+- **Organized, closed by default.** Settings stay grouped into parts. Secondary settings forms and option lists sit behind a button or a collapsed section, and secrets are never shown by default.
 - **Sweeps the category.** When asked to fix one element, the agent fixes every element of that kind on the screens in question, across platforms, themes, and states.
 - **Keeps what matters.** Functionality, information people need to proceed, real limitations, accessibility, and required notices stay. Removing in-scope clutter includes its markup, but deleting features, their implementation, or data needs explicit approval.
 

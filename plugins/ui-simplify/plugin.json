@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ui-simplify",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Build and clean up UI without the extra text, duplicate information, and decorative chrome agents tend to add.",
   "license": "MIT",
   "keywords": ["ui", "design", "simplify", "declutter", "copy"],
@@ -10,7 +10,7 @@
       "interface": {
         "displayName": "UI Simplify",
         "shortDescription": "Lean UI without agent fluff",
-        "longDescription": "Defaults for lean UI drawn from Isaac's repeated cleanup requests: no titles that repeat the header, no explainer or disclaimer copy, no duplicate information, few dividers, no nested cards or decorative chips, and primary actions above the fold. Applies while building UI, and when asked to simplify one element it fixes every element of that kind in scope, while keeping functionality, needed information, and accessibility.",
+        "longDescription": "Defaults for lean UI drawn from Isaac's repeated cleanup requests: no titles that repeat the header, no explainer or disclaimer copy, no duplicate information, few dividers, no nested cards or decorative chips, grouped settings, secondary settings forms and option lists behind a button, secrets hidden by default, and primary actions above the fold. Applies while building UI, and when asked to simplify one element it fixes every element of that kind in scope, while keeping functionality, needed information, and accessibility.",
         "developerName": "Local tools",
         "category": "Productivity",
         "capabilities": ["Read", "Write"],
