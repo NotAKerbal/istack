@@ -1,0 +1,13 @@
+{
+  "name": "codebase-design",
+  "version": "0.1.0",
+  "description": "Matt Pocock's shared vocabulary for designing deep modules: interfaces, seams, adapters, depth, leverage, and locality.",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Codebase Design",
+    "shortDescription": "Vocabulary for deep-module design",
+    "developerName": "Matt Pocock",
+    "category": "Productivity",
+    "capabilities": ["Read"]
+  }
+}

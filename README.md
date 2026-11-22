@@ -9,6 +9,7 @@ istack is Isaac's collection of local agent plugins. Each active plugin lives in
 | `linux-computer-use` 0.2.0 | [`plugins/linux-computer-use`](plugins/linux-computer-use/README.md) | Native GNOME desktop control over MCP (screenshots, input, AT-SPI accessibility), using a per-user service with an XDG portal fallback |
 | `coworker-brief` 0.1.0 | [`plugins/coworker-brief`](plugins/coworker-brief/README.md) | Skill-only catch-up brief: the agent explains its current thread like it would to a coworker, to cut context-switching cost |
 | `ui-simplify` 0.1.0 | [`plugins/ui-simplify`](plugins/ui-simplify/README.md) | Skill-only lean-UI rules: no extra text, duplicate information, or decorative chrome, applied while building and when simplifying |
+| `codebase-design` 0.1.0 | [`plugins/codebase-design`](plugins/codebase-design/README.md) | Skill-only, vendored from Matt Pocock: shared vocabulary for designing deep modules, seams, and adapters |
 
 Retired plugins are kept in [`archive/`](archive/).
 
