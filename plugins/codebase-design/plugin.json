@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "codebase-design",
+  "version": "0.1.0",
+  "description": "Matt Pocock's shared vocabulary for designing deep modules: interfaces, seams, adapters, depth, leverage, and locality.",
+  "license": "MIT",
+  "keywords": ["architecture", "design", "modules", "interfaces", "testability"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Codebase Design",
+        "shortDescription": "Vocabulary for deep-module design",
+        "longDescription": "Matt Pocock's codebase-design skill, vendored unchanged. It gives agents one vocabulary for designing deep modules (module, interface, implementation, depth, seam, adapter, leverage, locality), plus principles such as the deletion test and two adapters before a real seam, a guide to deepening a cluster by dependency category, and a Design It Twice pattern that compares several radically different interfaces.",
+        "developerName": "Local tools",
+        "category": "Productivity",
+        "capabilities": ["Read"],
+        "defaultPrompt": ["Use $codebase-design:codebase-design to find deepening opportunities in this module."]
+      }
+    }
+  }
+}
