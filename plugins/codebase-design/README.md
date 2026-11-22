@@ -12,7 +12,7 @@ This plugin is part of the [istack](../../README.md) collection at `plugins/code
 
 `DESIGN-IT-TWICE.md` mentions a project `GLOSSARY.md` for domain language. That file belongs to the project being designed, not to this skill. Skip it when a project has none.
 
-Invoke it with `$codebase-design` in Codex or `/codebase-design` in Claude Code, or ask an agent to design a module's interface, find deepening opportunities, or decide where a seam goes.
+Invoke it with `$codebase-design:codebase-design` in Codex or `/codebase-design` in Claude Code, or ask an agent to design a module's interface, find deepening opportunities, or decide where a seam goes.
 
 ## Source
 

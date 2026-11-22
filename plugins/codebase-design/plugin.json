@@ -11,10 +11,10 @@
         "displayName": "Codebase Design",
         "shortDescription": "Vocabulary for deep-module design",
         "longDescription": "Matt Pocock's codebase-design skill, vendored unchanged. It gives agents one vocabulary for designing deep modules (module, interface, implementation, depth, seam, adapter, leverage, locality), plus principles such as the deletion test and two adapters before a real seam, a guide to deepening a cluster by dependency category, and a Design It Twice pattern that compares several radically different interfaces.",
-        "developerName": "Matt Pocock",
+        "developerName": "Local tools",
         "category": "Productivity",
         "capabilities": ["Read"],
-        "defaultPrompt": ["Use $codebase-design to find deepening opportunities in this module."]
+        "defaultPrompt": ["Use $codebase-design:codebase-design to find deepening opportunities in this module."]
       }
     }
   }
